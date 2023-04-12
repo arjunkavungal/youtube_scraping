@@ -4,7 +4,7 @@ import pandas as pd
 driver = webdriver.Chrome()
 driver.get("https://www.youtube.com/results?search_query=coding")
 a = []
-df = pd.DataFrame(columns=['Title','Views','Age','Author','Text','CC','Moments','Numer_of_moments'])
+df = pd.DataFrame(columns=['Title','Views','Age','Author','Text','CC','Moments','Numer_of_moments']) # Create a dataframe
 for i in range(len(driver.find_elements(By.CLASS_NAME,'style-scope ytd-video-renderer'))):
     if not driver.find_elements(By.CLASS_NAME,'style-scope ytd-video-renderer')[i].text == "":
         a.append(driver.find_elements(By.CLASS_NAME,'style-scope ytd-video-renderer')[i].text)
